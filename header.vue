@@ -1,5 +1,5 @@
 <template>
-    <div class="sticky">
+    <div class="sticky"  :class="{'smallerHeader' : smallerHeader}">
     	<div class="top_bar">
     		<div class="site_container">
     			<div class="row top_bar_wrapper">
