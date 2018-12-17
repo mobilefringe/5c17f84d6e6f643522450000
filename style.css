@@ -1205,7 +1205,7 @@ strong, .bold {
 
 /**** Fixed Menu *****/
 
-.sticky {
+.fixed-menu {
   position: fixed;
   top: 0;
   width: 100%;
