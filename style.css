@@ -1220,6 +1220,9 @@ strong, .bold {
          margin-top: -51px;
         // display:none;
      }
+     .site_logo{
+         width:90px;
+     }
   }
 }
 
