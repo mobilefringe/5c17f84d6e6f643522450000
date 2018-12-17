@@ -1083,7 +1083,7 @@ strong, .bold {
 }
 /* *** STICKY NAV *** */
 
-.nav_container.sticky {
+.nav_container.fixed_menu {
   background: rgba(0, 0, 0, 0.7);
   .site_logo {
     margin: 0 auto 0 5%;
@@ -3547,7 +3547,7 @@ button[disabled].contest_btn:hover {
   #primary_nav ul .menu_item {
     min-width: 130px;
   }
-  .nav_container.sticky {
+  .nav_container.fixed_menu {
     .site_logo {
       margin: 0 auto 0 1%;
     }
@@ -3568,7 +3568,7 @@ button[disabled].contest_btn:hover {
 }
 
 @media (max-width: 1040px) {
-  .nav_container.sticky {
+  .nav_container.fixed_menu {
     .site_logo, #primary_nav {
       margin: 0 auto;
       float: none;
