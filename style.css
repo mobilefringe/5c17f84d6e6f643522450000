@@ -1063,7 +1063,7 @@ strong, .bold {
         background: rgba(255, 255, 255, 0.8);
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        transition: all .3s;
+        transition: all .5s;
         padding: 0;
         margin: 0;
         overflow: hidden;
