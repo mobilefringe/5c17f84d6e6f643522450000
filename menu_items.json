@@ -39,20 +39,8 @@
         "open_dropdown": false,
         "id": "services_link",
         "sub_menu": [{
-                "name": "header.services ",
+                "name": "header.sustainability ",
                 "href": "/pages/bramaleacitycentre-services"
-            },
-            {
-                "name": "header.gift_card",
-                "href": "/pages/bramaleacitycentre-gift-cards"
-            },
-            {
-                "name": "header.community_relations",
-                "href": "/pages/bramaleacitycentre-community-relations"
-            },
-            {
-                "name": "header.code_conduct",
-                "href": "/pages/bramaleacitycentre-code-of-conduct"
             },
             {
                 "name": "header.accessibility",
