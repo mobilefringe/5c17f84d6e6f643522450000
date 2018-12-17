@@ -129,7 +129,9 @@
                     showSearch: false,
                     search_result: null,
                     suggestionAttribute: "name",
-                    keys: ["name", "description", "tags", "keywords", "store.name"]
+                    keys: ["name", "description", "tags", "keywords", "store.name"],
+                    smallerHeader: false,
+                    isSticky: 100,
                 }
             },
             watch: {
