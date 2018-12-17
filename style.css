@@ -1217,6 +1217,7 @@ strong, .bold {
      .top_bar{
          opacity:0;
          visibility: hidden;
+         margin-top: -51px;
         // display:none;
      }
   }
