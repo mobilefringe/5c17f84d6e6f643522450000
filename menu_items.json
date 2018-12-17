@@ -57,9 +57,9 @@
         ]
     },
     {
-        "name": "header.rewards",
-        "href": "/rewards_club",
-        "id": "fashion_link"
+        "name": "header.hours",
+        "href": "/hours",
+        "id": "hours_link"
     },
     {
         "name": "header.contact_us",
