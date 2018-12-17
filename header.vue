@@ -226,6 +226,13 @@
                         this.search_result = "";
                     });
                 },
+                makeNavbarSmall(e) {
+                  if (window.pageYOffset >= this.isSticky) {
+                    this.smallerHeader = true;
+                  } else {
+                    this.smallerHeader = false;
+                  }
+                },
             }
             
         });
