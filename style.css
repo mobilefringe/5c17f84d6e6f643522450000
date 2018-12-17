@@ -51,6 +51,11 @@ hr {
 
 
 /* COLOUR VARIABLES */
+$primary: #004d71;
+$secondary: #fff;
+$social: #63666A;
+$link: #63666A;
+$accent :#356e54;
 
 body {
   color: #000;
