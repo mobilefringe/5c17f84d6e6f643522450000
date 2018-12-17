@@ -1214,7 +1214,9 @@ strong, .bold {
   opacity: 1;
   z-index: 99;
   &.smallerHeader {
-      
+     .top_bar{
+         opacity:0;
+     }
   }
 }
 
