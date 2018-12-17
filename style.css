@@ -906,6 +906,7 @@ strong, .bold {
   max-width: 120px;
   text-align: left;
   display: inline-block;
+  transition: all ease 0.3s;
   img {
     max-width: 100%;
   }
