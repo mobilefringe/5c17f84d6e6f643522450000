@@ -1212,6 +1212,9 @@ strong, .bold {
   background: white;
   opacity: 1;
   z-index: 99;
+  &.smallerHeader {
+      
+  }
 }
 
 /***** pagination ******/
