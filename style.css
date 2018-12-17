@@ -1071,7 +1071,7 @@ strong, .bold {
         width: 200px;
     }
     .dropdown-content a {
-        color: black;
+        color: #fff;
         padding: 0px 16px;
         text-decoration: none;
         transition-property: all;
