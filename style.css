@@ -1224,9 +1224,9 @@ strong, .bold {
      }
      .site_logo{
           max-width:90px;
-        img{
-             width:90px;
-        }
+        // img{
+        //      width:90px;
+        // }
      }
   }
 }
