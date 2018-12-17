@@ -1,0 +1,88 @@
+[
+    {
+        "name": "header.stores",
+        "href": "#",
+        "open_dropdown": false,
+        "id": "stores_link",
+        "sub_menu": [{
+                "name": "header.stores",
+                "href": "/stores"
+            },
+            {
+                "name": "header.centre_map",
+                "href": "/map"
+            },
+            {
+                "name": "header.restaurants",
+                "href": "/restaurants"
+            }
+        ]
+    },
+    {
+        "name": "header.promos",
+        "href": "/promotions",
+        "id": "promos_link"
+    },
+    {
+        "name": "header.news_events",
+        "href": "#",
+        "id": "events_link"
+    },
+    {
+        "name": "header.services",
+        "href": "#",
+        "open_dropdown": false,
+        "id": "services_link",
+        "sub_menu": [{
+                "name": "header.services ",
+                "href": "/pages/bramaleacitycentre-services"
+            },
+            {
+                "name": "header.gift_card",
+                "href": "/pages/bramaleacitycentre-gift-cards"
+            },
+            {
+                "name": "header.community_relations",
+                "href": "/pages/bramaleacitycentre-community-relations"
+            },
+            {
+                "name": "header.code_conduct",
+                "href": "/pages/bramaleacitycentre-code-of-conduct"
+            },
+            {
+                "name": "header.accessibility",
+                "href": "/pages/bramaleacitycentre-accessibilty"
+            }
+            
+        ]
+    },
+    {
+        "name": "header.rewards",
+        "href": "/rewards_club",
+        "id": "fashion_link"
+    },
+    {
+        "name": "header.contact_us",
+        "href": "#",
+        "id": "contact_link",
+        "open_dropdown": false,
+        "sub_menu": [
+            {
+                "name": "header.contact_us",
+                "href": "/contact_us"
+            },
+            {
+                "name": "header.hours",
+                "href": "/hours"
+            },
+            {
+                "name": "header.employment",
+                "href": "/jobs"
+            },
+            {
+                "name": "header.leasing",
+                "href": "/pages/bramaleacitycentre-leasing"
+            }
+        ]
+    }
+]
