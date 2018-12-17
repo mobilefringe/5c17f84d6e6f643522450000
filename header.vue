@@ -150,6 +150,9 @@
                     }
                 }
             },
+            created(){
+                window.addEventListener("scroll", this.makeNavbarSmall);
+            }
             computed: {
                 ...Vuex.mapGetters([
                     'property',
