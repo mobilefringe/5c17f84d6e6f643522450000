@@ -1223,7 +1223,7 @@ strong, .bold {
         // display:none;
      }
      .site_logo{
-          width:90px;
+          max-width:90px;
         img{
              width:90px;
         }
