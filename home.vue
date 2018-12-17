@@ -108,7 +108,10 @@
                     'findMetaDataByPath'
                 ]),
                 banners () { 
-                    var banner = this.$store.state.banners;
+                    var banners = this.$store.state.banners;
+                     _.forEach(banners, function(value, key) {
+                        banner.image_url = value.image_url = "https://picsum.photos/570/1140?image=98"+key;
+                    })
                     return _.orderBy(banners, ['position'], ['asc']);
                 },
                 feature_items () {
