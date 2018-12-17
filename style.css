@@ -1083,30 +1083,30 @@ strong, .bold {
 }
 /* *** STICKY NAV *** */
 
-.nav_container.fixed_menu {
-  background: rgba(0, 0, 0, 0.7);
-  .site_logo {
-    margin: 0 auto 0 5%;
-    padding: 3px;
-    width: 135px;
-    float: left;
-  }
-  #primary_nav {
-    margin: 0 5% 0 auto;
-    float: right;
-    ul {
-      li {
-        padding: 8px 0;
-        &:hover {
-          background: none;
-        }
-      }
-      ul {
-        background: rgba(0, 0, 0, 0.7);
-      }
-    }
-  }
-}
+// .nav_container.fixed_menu {
+//   background: rgba(0, 0, 0, 0.7);
+//   .site_logo {
+//     margin: 0 auto 0 5%;
+//     padding: 3px;
+//     width: 135px;
+//     float: left;
+//   }
+//   #primary_nav {
+//     margin: 0 5% 0 auto;
+//     float: right;
+//     ul {
+//       li {
+//         padding: 8px 0;
+//         &:hover {
+//           background: none;
+//         }
+//       }
+//       ul {
+//         background: rgba(0, 0, 0, 0.7);
+//       }
+//     }
+//   }
+// }
 
 #menu-icon {
   width: 30px;
