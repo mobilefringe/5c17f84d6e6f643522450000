@@ -1223,7 +1223,10 @@ strong, .bold {
         // display:none;
      }
      .site_logo{
-         width:90px;
+          width:90px;
+        img{
+             width:90px;
+        }
      }
   }
 }
