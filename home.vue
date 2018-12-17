@@ -107,8 +107,9 @@
                     'findRepoByName',
                     'findMetaDataByPath'
                 ]),
-                banners () {
-                    return _.orderBy(this.$store.state.banners, ['position'], ['asc']);
+                banners () { 
+                    var banner = this.$store.state.banners;
+                    return _.orderBy(banners, ['position'], ['asc']);
                 },
                 feature_items () {
                     // return this.$store.state.feature_items;
