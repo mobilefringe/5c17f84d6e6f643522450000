@@ -40,11 +40,11 @@
         "id": "services_link",
         "sub_menu": [{
                 "name": "header.sustainability ",
-                "href": "/pages/bramaleacitycentre-sustainability"
+                "href": "/pages/eastyork-sustainability"
             },
             {
                 "name": "header.accessibility",
-                "href": "/pages/bramaleacitycentre-accessibilty"
+                "href": "/pages/eastyork-accessibilty"
             }
             
         ]
