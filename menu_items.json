@@ -29,6 +29,11 @@
         "id": "events_link"
     },
     {
+        "name": "header.hours",
+        "href": "/hours",
+        "id": "hours_link"
+    },
+    {
         "name": "header.services",
         "href": "#",
         "open_dropdown": false,
@@ -55,11 +60,6 @@
             }
             
         ]
-    },
-    {
-        "name": "header.hours",
-        "href": "/hours",
-        "id": "hours_link"
     },
     {
         "name": "header.contact_us",
