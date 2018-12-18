@@ -180,7 +180,7 @@
             },
             created() {
                 this.loadData(this.id).then(response => {
-                    this.currentContest = this.findContestBySlug('bonniedoon-test-contest');
+                    this.currentContest = this.findContestBySlug('eastyork-test-contest');
                     var temp_repo = this.findRepoByName('Pages Banner');
                     if(temp_repo && temp_repo.images) {
                         this.pageBanner = temp_repo.images[0];
