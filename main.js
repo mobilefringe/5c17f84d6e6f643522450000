@@ -31,11 +31,6 @@ require.config({
         'vee-validate' : 'https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate',
         'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min',
         'lightbox': 'https://mmvue.codecloudapp.com/lightbox',
-        //png-map dependencies
-        'mousewheel' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min',
-        'mapplic' : 'https://preview-mmvue.codecloudapp.com/mapplic',
-        'hammer' : 'https://codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/javascript/1484859750000/hammer.min',
-        'mapplic-map' : 'https://preview-mmvue.codecloudapp.com/mapplic.vue?noext',
         'vue-simple-spinner': 'https://cdn.jsdelivr.net/npm/vue-simple-spinner@1.2.8/dist/vue-simple-spinner.min',
         'vue-lazy-load': 'https://unpkg.com/vue-lazyload/vue-lazyload',
         'masonry' : 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min',
@@ -44,7 +39,12 @@ require.config({
         'loader': 'https://mmvue.codecloudapp.com/loader.vue?noext',
         'campaignMonitor': 'https://js.createsend1.com/javascript/copypastesubscribeformlogic',
         'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
-        'store-masonry': 'https://mmvue.codecloudapp.com/storelist_masonry.vue?noext'
+        'store-masonry': 'https://mmvue.codecloudapp.com/storelist_masonry.vue?noext',
+        //png-map dependencies
+        'mousewheel' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min',
+        'mapplic' : 'https://preview-mmvue.codecloudapp.com/mapplic',
+        'hammer' : 'https://codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/javascript/1484859750000/hammer.min',
+        'mapplic-map' : 'https://preview-mmvue.codecloudapp.com/mapplic.vue?noext'
     }
 });
 
