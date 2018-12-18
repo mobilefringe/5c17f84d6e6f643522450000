@@ -73,7 +73,7 @@
     "read_more" : "View Event Details",
     "no_event_message" : "There are no Events at this time. Please check back soon.",
     "back_to_events" : "Back to Events",
-    "more_promos": "Load More Promos"
+    "more_promos": "Load More Events"
   },
   "jobs_page": {
     "jobs" : "Employment",
