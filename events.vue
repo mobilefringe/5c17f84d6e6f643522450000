@@ -149,7 +149,9 @@
                 return {
                     dataloaded: false,
                     promoBanner: null,
-                    paginate: ['events']
+                    paginate: ['events'],
+                    incrementBy: 5,
+                    showMore: 5,
                 }
             },
             created() {
