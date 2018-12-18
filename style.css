@@ -3766,10 +3766,10 @@ html:not(.touch) .feature_item_container .gallery-image {
     bottom: -25px;
   }
   &:hover {
-        .hvr-underline-from-center:before, .hvr-underline-from-center:before, .hvr-underline-from-center:before {
-          left: 0;
-          right: 0;
-        }
+    .hvr-underline-from-center:before, .hvr-underline-from-center:before, .hvr-underline-from-center:before {
+      left: 0;
+      right: 0;
+    }
   }
 }
 
