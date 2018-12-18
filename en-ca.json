@@ -79,7 +79,8 @@
     "jobs" : "Employment",
     "read_more" : "View Job Details",
     "no_job_message" : "There are no jobs listed at this time. Please check back soon.",
-    "back_to_jobs" : "Back to Employments"
+    "back_to_jobs" : "Back to Employments",
+    "more_promos": "Load More Jobs"
   },
   "hours_page" : {
     "hours" : "Hours",
