@@ -65,7 +65,8 @@
     "promotions" : "Promotions",
     "read_more" : "View Promotion Details",
     "no_promo_message" : "There are no Promotions at this time. Please check back soon.",
-    "back_to_promos" : "Back to Promotions"
+    "back_to_promos" : "Back to Promotions",
+    "more_promos": "Load More Promos"
   },
   "events_page": {
     "events" : "Events",
