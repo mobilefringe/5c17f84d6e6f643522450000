@@ -153,7 +153,7 @@
                     var share_url = "http://bramaleacitycentre.com/jobs/" + slug;
                     return share_url;
                 },
-                loadMoreStores() {
+                loadMoreItems() {
                   if (this.showMore <= this.promos.length) {
                     var num = this.showMore + this.incrementBy;
                     this.showMore = num;
