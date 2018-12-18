@@ -152,6 +152,7 @@
                     var num = this.showMore + this.incrementBy;
                     this.showMore = num;
                   }
+                }
     }
             }
         });
