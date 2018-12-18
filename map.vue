@@ -78,12 +78,14 @@
                 this.loadData().then(response => {
                     this.dataloaded = true;
                     this.filteredStores = this.allStores;
-                    
-                    var temp_repo = this.findRepoByName('Map Banner');
+
+                    var temp_repo = this.findRepoByName('Directory Banner');
                     if(temp_repo) {
                         this.pageBanner = temp_repo.images[0];
+                    } else {
+                        this.pageBanner = {};
+                        this.pageBanner.image_url = "";
                     }
-                    this.$on('updateMap', this.updatePNGMap);
                 });
             },
             watch: {
@@ -96,7 +98,6 @@
                 },
             },
             mounted() {
-                // this.filteredStores = this.allStores;
                 this.$nextTick(function() {
                     window.addEventListener('resize', this.getWindowWidth);
                     //Init
@@ -108,112 +109,63 @@
                     'property',
                     'timezone',
                     'processedStores',
-                    'processedCategories',
-                    'storesByAlphaIndex',
-                    'storesByCategoryName',
-                    'findCategoryById',
-                    'findCategoryByName',
                     'findRepoByName'
-
                 ]),
                 allStores() {
-                    return this.processedStores;
+                    var all_stores = this.processedStores;
+                    _.forEach(all_stores, function(value, key) {
+                        value.zoom = 2;
+                    });
+                    return all_stores;
                 },
-                allCatergories() {
-                    return this.processedCategories;
-                },
-                dropDownCats() {
-                    var cats = _.map(this.processedCategories, 'name');
-                    cats.unshift('All');
-                    return cats;
+                mapStores() {
+                    var all_stores = this.processedStores;
+                    _.forEach(all_stores, function(value, key) {
+                        value.zoom = 2;
+                        if(value.svgmap_region == null){
+                            value.svgmap_region = value.id;
+                        }
+                    });
+                    return all_stores;
                 },
                 storeNames () {
                     return _.map(this.processedStores, 'name');
                 },
-                getPNGurl() {
-                    return "https://www.mallmaverick.com" + this.property.map_url;
+                getSVGMap(){
+                  return "//mallmaverick.com"+this.property.svgmap_url;  
                 },
-                svgMapRef() {
-                    return _.filter(this.$children, function(o) {
-                        return (o.$el.className == "svg-map")
-                    })[0];
-                },
-                getStoreById(){
+                floorList () {
+                    var floor_list = [];
+                    var floor_1 = {};
+                    floor_1.id = "first-floor";
+                    floor_1.title = "Level One";
+                    floor_1.map = this.getSVGMap;
+                    floor_1.z_index = null;
+                    floor_1.show = true;
+                    floor_list.push(floor_1);
                     
-                },
-                filterStores() {
-                    letter = this.selectedAlpha;
-                    if (letter == "All") {
-                        this.filteredStores = this.allStores;
-                    } else {
-                        var filtered = _.filter(this.allStores, function(o, i) {
-                            return _.lowerCase(o.name)[0] == _.lowerCase(letter);
-                        });
-                        this.filteredStores = filtered;
-                    }
-                },
-                filterByCategory() {
-                    category_id = this.selectedCat;
-                    if (category_id == "All" || category_id == null || category_id == undefined) {
-                        category_id = "All";
-                    } else {
-                        category_id = this.findCategoryByName(category_id).id;
-                    }
-
-                    if (category_id == "All") {
-                        this.filteredStores = this.allStores;
-                    } else {
-
-                        var find = this.findCategoryById;
-                        var filtered = _.filter(this.allStores, function(o) {
-                            return _.indexOf(o.categories, _.toNumber(category_id)) > -1;
-                        });
-                    
-                        this.filteredStores = filtered;
-                    }
-                    var el = document.getElementById("selectByCat");
-                    if(el) {
-                        el.classList.remove("open");
-                    }
-                },
+                    return floor_list;
+                }
             },
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
                         let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                changeMode(mode) {
-                    this.listMode = mode;
-                },
-                updatePNGMap(map) {
-                    this.map = map;
-                },
-                addLandmark(store) {
-                    this.svgMapRef.addMarker(store);
+                dropPin(store) {
+                    this.$refs.mapplic_ref.showLocation(store.svgmap_region);
                 },
                 getWindowWidth(event) {
                     this.windowWidth = window.innerWidth;
                 },
                 onOptionSelect(option) {
                     this.search_result = "";
-                    this.$router.push("/stores/"+option.slug);
+                    this.dropPin(option);
                 },
-                focusLowerLevel(){
-                    this.svgMapRef.focusTo(1250, 1875, 35);
-                    this.lowerActive = true;
-                    this.upperActive = false;
-                },
-                focusUpperLevel() {
-                    this.svgMapRef.focusTo(1250, 625, 35);
-                    this.lowerActive = false;
-                    this.upperActive = true;
-                }
             },
-            
             beforeDestroy: function() {
                 window.removeEventListener('resize', this.getWindowWidth);
             },
