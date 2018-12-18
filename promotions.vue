@@ -148,10 +148,10 @@
                     return share_url;
                 },
                 loadMoreStores() {
-      if (this.showMore <= this.filteredStores.length) {
-        var num = this.showMore + this.incrementBy;
-        this.showMore = num;
-      }
+                  if (this.showMore <= this.filteredStores.length) {
+                    var num = this.showMore + this.incrementBy;
+                    this.showMore = num;
+                  }
     }
             }
         });
