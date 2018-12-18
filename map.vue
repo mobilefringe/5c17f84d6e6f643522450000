@@ -9,54 +9,55 @@
 			</div>
 		</div>
 		<div class="site_container">
-			<div class="col-sm-3   padding_top_20">
-			    <div class="store_search map_store_search hidden_phone" >
-					<search-component :list="allStores" :placeholder="$t('stores_page.search_stores')" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
-						<template slot="item" scope="option" class="manual">
-							<article class="media">
-								<p>
-									<strong>{{ option.data.name }}</strong>
-								</p>
-							</article>
-						</template>
-					</search-component>
-					<i class="fa fa-search pull-right search_icon"></i>
-					<!--<img src="//codecloud.cdn.speedyrails.net/sites/5a6a54eb6e6f647da51e0100/image/png/1517497861636/search_icon_2x.png" class="pull-right" id="store_search_img" alt="">-->
-				</div>
+		    <div class="row">
+		        <div class="col-sm-4">
+		            
+		        </div>
+		        <div class="col-sm-8 floor_switch_container" >
+		        <!--<div></div>-->
+		            <div class="floor_switch" @click="focusUpperLevel" :class="{active: upperActive}">Upper Level</div>
+		            <div class="floor_switch" @click="focusLowerLevel" :class="{active: lowerActive}">Lower Level</div>
+		        </div>
+		    </div>
+			<div class="col-sm-4   padding_top_20">
                 <div class="map_directory text-center hidden_phone">
-                    <!--<h3 class="map_title caps">{{$t("stores_page.find_store")}}</h3>-->
+                    <h2 style="display:none;" class="map_title caps">{{$t("stores_page.find_store")}}</h2>
+                    <h3 class="map_title caps">{{$t("stores_page.find_store")}}</h3>
                     <div id="stores_container" class="directory_list text-left">
-                        <li v-for="store in allStores" class="pointer">
-							<p class="directory_store_name caps" v-on:click="dropPin(store)">{{store.name}}</p>
+                        <li v-for="store in filteredStores" class="pointer">
+							<p class="directory_store_name caps" v-on:click="addLandmark(store)">{{store.name}}</p>
 						</li>
                     </div>
                 </div>
                 <div class="visible_phone">
-                    <!--<p class="text_left">Find Store :</p>-->
+                    <p class="text_left">Find Store :</p>
 					<div class="alphabet-dd visible_phone" >
-					    <v-select :options="allStores" label="name" :searchable="false" :on-change="dropPin" id="mobile_alpha_list" :placeholder="$t('stores_page.select_a_store')"></v-select>
+					    <v-select :options="allStores" label="name" :searchable="false" :on-change="addLandmark" id="mobile_alpha_list" :placeholder="$t('stores_page.select_a_store')"></v-select>
 				    </div>
                 </div>
             </div>
-            <div class="col-sm-9">
-            <div class="padding_top_20 map light_border">
-				<!--<png-map ref="pngmap_ref" :png-map-url="getPNGurl" :initial-position="'700 450'" @updateMap="updatePNGMap"></png-map>-->
-				<mapplic-map ref="mapplic_ref" :height="650" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="mapStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
-			</div>
+            <div class="col-sm-8">
+                <div class="padding_top_20 map light_border">
+    				<png-map ref="pngmap_ref" :png-map-url="getPNGurl" :initial-position="'1250 1875'" :initialZoom="35" @updateMap="updatePNGMap"></png-map>
+    			</div>
             </div>
 		</div>
 	</div>
 </template>
 <style>
 	#png_map{
-	    width:1310px;
-		height: 983px;
-		min-width:1310px;
-		min-height: 983px;
+	    width:2500px;
+		height: 2500px;
+		min-width:2500px;
+		min-height: 2500px;
+	}
+	#zoom_container .landmarks .mark .text {
+        background-color: #fff;
+        border: 1px solid;
 	}
 </style>
 <script>
-    define(["Vue", "vuex", "vue-select", "vue!search-component", "vue!mapplic-map"], function(Vue, Vuex, VueSelect, SearchComponent, MapplicComponent) {
+    define(["Vue", "vuex", "vue-select", "jquery", "smooth-zoom", "vue!png-map", "vue!search-component"], function(Vue, Vuex, VueSelect, $, smoothZoom, PNGMapComponent, SearchComponent) {
         return Vue.component("stores-component", {
             template: template, // the variable template will be injected
             data: function() {
@@ -71,20 +72,21 @@
                     windowWidth: 0,
                     storeBanner : null,
                     search_result : null,
+                    lowerActive: true,
+                    upperActive: false
                 }
             },
             created (){
                 this.loadData().then(response => {
                     this.dataloaded = true;
                     this.filteredStores = this.allStores;
-
-                    var temp_repo = this.findRepoByName('Directory Banner');
+                    
+                    // this.storeBanner = this.findRepoByName('Stores Banner').images[0];
+                    var temp_repo = this.findRepoByName('Map Banner');
                     if(temp_repo) {
                         this.pageBanner = temp_repo.images[0];
-                    } else {
-                        this.pageBanner = {};
-                        this.pageBanner.image_url = "";
                     }
+                    this.$on('updateMap', this.updatePNGMap);
                 });
             },
             watch: {
@@ -97,6 +99,7 @@
                 },
             },
             mounted() {
+                // this.filteredStores = this.allStores;
                 this.$nextTick(function() {
                     window.addEventListener('resize', this.getWindowWidth);
                     //Init
@@ -108,63 +111,114 @@
                     'property',
                     'timezone',
                     'processedStores',
+                    'processedCategories',
+                    'storesByAlphaIndex',
+                    'storesByCategoryName',
+                    'findCategoryById',
+                    'findCategoryByName',
                     'findRepoByName'
+
                 ]),
                 allStores() {
-                    var all_stores = this.processedStores;
-                    _.forEach(all_stores, function(value, key) {
-                        value.zoom = 2;
-                    });
-                    return all_stores;
+                    return this.processedStores;
                 },
-                mapStores() {
-                    var all_stores = this.processedStores;
-                    _.forEach(all_stores, function(value, key) {
-                        value.zoom = 2;
-                        if(value.svgmap_region == null){
-                            value.svgmap_region = value.id;
-                        }
-                    });
-                    return all_stores;
+                allCatergories() {
+                    return this.processedCategories;
+                },
+                dropDownCats() {
+                    var cats = _.map(this.processedCategories, 'name');
+                    cats.unshift('All');
+                    return cats;
                 },
                 storeNames () {
                     return _.map(this.processedStores, 'name');
                 },
-                getSVGMap(){
-                  return "//mallmaverick.com"+this.property.svgmap_url;  
+                getPNGurl() {
+                    return "https://www.mallmaverick.com" + this.property.map_url;
                 },
-                floorList () {
-                    var floor_list = [];
-                    var floor_1 = {};
-                    floor_1.id = "first-floor";
-                    floor_1.title = "Level One";
-                    floor_1.map = this.getSVGMap;
-                    floor_1.z_index = null;
-                    floor_1.show = true;
-                    floor_list.push(floor_1);
+                svgMapRef() {
+                    return _.filter(this.$children, function(o) {
+                        return (o.$el.className == "svg-map")
+                    })[0];
+                },
+                getStoreById(){
                     
-                    return floor_list;
-                }
+                },
+                filterStores() {
+                    letter = this.selectedAlpha;
+                    if (letter == "All") {
+                        this.filteredStores = this.allStores;
+                    } else {
+                        var filtered = _.filter(this.allStores, function(o, i) {
+                            return _.lowerCase(o.name)[0] == _.lowerCase(letter);
+                        });
+                        this.filteredStores = filtered;
+                    }
+                },
+                filterByCategory() {
+                    category_id = this.selectedCat;
+                    if (category_id == "All" || category_id == null || category_id == undefined) {
+                        category_id = "All";
+                    } else {
+                        category_id = this.findCategoryByName(category_id).id;
+                    }
+
+                    if (category_id == "All") {
+                        this.filteredStores = this.allStores;
+                    } else {
+
+                        var find = this.findCategoryById;
+                        var filtered = _.filter(this.allStores, function(o) {
+                            return _.indexOf(o.categories, _.toNumber(category_id)) > -1;
+                        });
+                    
+                        this.filteredStores = filtered;
+                    }
+                    var el = document.getElementById("selectByCat");
+                    if(el) {
+                        el.classList.remove("open");
+                    }
+                    
+                },
+                
             },
             methods: {
                 loadData: async function() {
                     try {
+                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
                         let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                dropPin(store) {
-                    this.$refs.mapplic_ref.showLocation(store.svgmap_region);
+                changeMode(mode) {
+                    this.listMode = mode;
+                },
+                updatePNGMap(map) {
+                    this.map = map;
+                },
+                addLandmark(store) {
+                    this.svgMapRef.addMarker(store);
                 },
                 getWindowWidth(event) {
                     this.windowWidth = window.innerWidth;
                 },
                 onOptionSelect(option) {
                     this.search_result = "";
-                    this.dropPin(option);
+                    this.$router.push("/stores/"+option.slug);
                 },
+                focusLowerLevel(){
+                    this.svgMapRef.focusTo(1250, 1875, 35);
+                    this.lowerActive = true;
+                    this.upperActive = false;
+                },
+                focusUpperLevel() {
+                    this.svgMapRef.focusTo(1250, 625, 35);
+                    this.lowerActive = false;
+                    this.upperActive = true;
+                }
             },
+            
             beforeDestroy: function() {
                 window.removeEventListener('resize', this.getWindowWidth);
             },
