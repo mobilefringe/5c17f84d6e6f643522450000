@@ -67,8 +67,8 @@
               <div
                 class="pointer"
                 v-if="promos && showMore <= promos.length"
-                @click="loadMoreStores()"
-              >{{$t("events_page.more_promos")}}</div>
+                @click="loadMoreItems()"
+              >{{$t("promos_page.more_promos")}}</div>
             </div>
 		</div>
 	</div>
