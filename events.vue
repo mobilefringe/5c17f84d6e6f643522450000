@@ -14,8 +14,10 @@
 		<div class="site_container page_content" id="events_container">
 			<div  v-if="events.length > 0">
 				<paginate name="events" v-if="events" :list="events" class="paginate-list margin-60" :per="4">
-					<div class="row event_container" v-for="(promo,index) in paginated('events')" :class="{ 'last': index === (paginated('events').length - 1) }">
-						<div class="col-sm-6 col-md-4 event_image_container">
+					<!--<div class="row event_container" v-for="(promo,index) in paginated('events')" :class="{ 'last': index === (paginated('events').length - 1) }">-->
+		
+            		<div class="row event_container" v-if="showMore > index" v-for="(promo,index) in events">				
+            		    <div class="col-sm-6 col-md-4 event_image_container">
 							<!--<router-link :to="'/events/'+ promo.slug" class="event_learn_more">-->
 							<img :src="promo.store.store_front_url_abs"  class="event_image image" :alt="'Click here to view ' + promo.name"/>
 							<!--</router-link>-->
