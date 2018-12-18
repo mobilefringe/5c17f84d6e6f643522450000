@@ -163,6 +163,7 @@
                     if(temp_repo) {
                         this.promoBanner = temp_repo.images[0];
                     }
+                    this.promos = this.events;
                 });
             },
             computed: {
