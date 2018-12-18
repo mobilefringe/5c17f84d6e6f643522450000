@@ -32,7 +32,7 @@
                 <div class="visible_phone">
                     <p class="text_left">Find Store :</p>
 					<div class="alphabet-dd visible_phone" >
-					    <v-select :options="allStores" label="name" :searchable="false" :on-change="addLandmark" id="mobile_alpha_list" :placeholder="$t('stores_page.select_a_store')"></v-select>
+					    <v-select :options="allStores" label="name" :searchable="false" :on-change="dropPin" id="mobile_alpha_list" :placeholder="$t('stores_page.select_a_store')"></v-select>
 				    </div>
                 </div>
             </div>
