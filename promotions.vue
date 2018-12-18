@@ -147,6 +147,12 @@
                     var share_url = "http://bramaleacitycentre.com/promotions/" + slug;
                     return share_url;
                 },
+                loadMoreStores() {
+      if (this.showMore <= this.filteredStores.length) {
+        var num = this.showMore + this.incrementBy;
+        this.showMore = num;
+      }
+    }
             }
         });
     });
