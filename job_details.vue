@@ -73,7 +73,7 @@
                     currentJob: null,
                     storeJobs : null,
                     storeHours : null,
-                    jobBanner : null
+                    pageBanner : null
                 }
             },
             props:['id', 'locale'],
