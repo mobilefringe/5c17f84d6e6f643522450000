@@ -3605,7 +3605,7 @@ html:not(.touch) .feature_item_container .gallery-image .figcaption {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 14px;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, );
     padding: 1rem;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
