@@ -56,6 +56,7 @@
 					<!--		</router-link>-->
 					<!--	</div>-->
 					<!--</div>-->
+					    <store-masonry :filteredStores="filteredStores"></store-masonry>
 				</div>
 			</div>
 		</div>
