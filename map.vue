@@ -57,7 +57,7 @@
 	}
 </style>
 <script>
-    define(["Vue", "vuex", "vue-select", "jquery", "smooth-zoom", "vue!png-map", "vue!search-component"], function(Vue, Vuex, VueSelect, $, smoothZoom, PNGMapComponent, SearchComponent) {
+    define(["Vue", "vuex", "vue-select", "vue!mapplic-map"], function(Vue, Vuex, VueSelect,MapplicComponent) {
         return Vue.component("stores-component", {
             template: template, // the variable template will be injected
             data: function() {
@@ -178,7 +178,6 @@
                     if(el) {
                         el.classList.remove("open");
                     }
-                    
                 },
             },
             methods: {
