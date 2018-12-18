@@ -189,7 +189,6 @@
                         this.pageBanner = {};
                         this.pageBanner.image_url = "";
                     }
-                    
                 });
             },
             mounted() {
