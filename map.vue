@@ -180,7 +180,6 @@
                     }
                     
                 },
-                
             },
             methods: {
                 loadData: async function() {
