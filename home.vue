@@ -29,7 +29,7 @@
                         <div class="insta-feed-background" v-bind:style="{ backgroundImage: 'url(' + item.images.standard_resolution.url + ')' }"></div>
                         <div class="insta_content">
                             <div class="insta_caption">
-                                <p>{{ _.truncate(item.caption.text,{'length':50} }}</p>
+                                <p>{{ _.truncate(item.caption.text,{'length':50}) }}</p>
                                 <div>
                                     <span>
                                         <i class="fa fa-heart"></i> {{ item.likes.count }}
