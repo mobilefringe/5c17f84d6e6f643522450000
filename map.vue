@@ -38,7 +38,7 @@
             </div>
             <div class="col-sm-8">
                 <div class="padding_top_20 map light_border">
-    				<png-map ref="pngmap_ref" :png-map-url="getPNGurl" :initial-position="'1250 1875'" :initialZoom="35" @updateMap="updatePNGMap"></png-map>
+    				<mapplic-map ref="mapplic_ref" :height="650" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="mapStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
     			</div>
             </div>
 		</div>
