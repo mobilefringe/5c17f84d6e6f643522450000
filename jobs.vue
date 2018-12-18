@@ -9,8 +9,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="site_container page_content">
-			<div id="events_container" v-if="promotions.length > 0">
+		<div class="site_container page_content" id="events_container">
+			<div  v-if="promotions.length > 0">
 				<!--<paginate name="promos" v-if="promos" :list="promos" class="paginate-list margin-60" :per="4">-->
 					<div class="row event_container" v-if="showMore > index" v-for="(promo,index) in promos">		
 						<div class="col-sm-6 col-md-4 event_image_container">
