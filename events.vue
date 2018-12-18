@@ -13,7 +13,7 @@
 		</div>
 		<div class="site_container page_content" id="events_container">
 			<div  v-if="events.length > 0">
-				<paginate name="events" v-if="events" :list="events" class="paginate-list margin-60" :per="4">
+				<!--<paginate name="events" v-if="events" :list="events" class="paginate-list margin-60" :per="4">-->
 					<!--<div class="row event_container" v-for="(promo,index) in paginated('events')" :class="{ 'last': index === (paginated('events').length - 1) }">-->
 		
             		<div class="row event_container" v-if="showMore > index" v-for="(promo,index) in events">				
@@ -52,7 +52,7 @@
 							<hr>
 						</div>
 					</div>
-				</paginate>
+				<!--</paginate>-->
 			</div>
 			<div id="no_events" class="row" v-else>
 				<div class="col-md-12">
