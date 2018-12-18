@@ -15,8 +15,8 @@
 		        </div>
 		        <div class="col-sm-8 floor_switch_container" >
 		        <!--<div></div>-->
-		            <div class="floor_switch" @click="focusUpperLevel" :class="{active: upperActive}">Upper Level</div>
-		            <div class="floor_switch" @click="focusLowerLevel" :class="{active: lowerActive}">Lower Level</div>
+		            <!--<div class="floor_switch" @click="focusUpperLevel" :class="{active: upperActive}">Upper Level</div>-->
+		            <!--<div class="floor_switch" @click="focusLowerLevel" :class="{active: lowerActive}">Lower Level</div>-->
 		        </div>
 		    </div>
 			<div class="col-sm-4   padding_top_20">
@@ -25,7 +25,7 @@
                     <h3 class="map_title caps">{{$t("stores_page.find_store")}}</h3>
                     <div id="stores_container" class="directory_list text-left">
                         <li v-for="store in filteredStores" class="pointer">
-							<p class="directory_store_name caps" v-on:click="addLandmark(store)">{{store.name}}</p>
+							<p class="directory_store_name caps" v-on:click="dropPin(store)">{{store.name}}</p>
 						</li>
                     </div>
                 </div>
