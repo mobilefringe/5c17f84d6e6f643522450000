@@ -87,7 +87,7 @@
                     selectedDate: null,
                     filteredPromos:[],
                     dataloaded: false,
-                    promoBanner: null,
+                    pageBanner: null,
                     // paginate: ['promos'],
                     promos : null,
                     incrementBy: 5,
