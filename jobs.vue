@@ -58,11 +58,18 @@
 					<p>{{$t("jobs_page.no_job_message")}}</p>
 				</div>
 			</div>
-			<div class="row margin-60">
-				<div class="col-md-12">
-					<paginate-links for="promos" :async="true" :limit="5" :show-step-links="true"></paginate-links>
-				</div>
-			</div>
+			<!--<div class="row margin-60">-->
+			<!--	<div class="col-md-12">-->
+			<!--		<paginate-links for="promos" :async="true" :limit="5" :show-step-links="true"></paginate-links>-->
+			<!--	</div>-->
+			<!--</div>-->
+			<div class="show_more">
+              <div
+                class="pointer"
+                v-if="promos && showMore <= promos.length"
+                @click="loadMoreStores()"
+              >{{$t("events_page.more_promos")}}</div>
+            </div>
 		</div>
 	</div>
 </template>
