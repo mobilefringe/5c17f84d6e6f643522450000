@@ -24,14 +24,34 @@
 		      <h3 class="home_page_title caps">{{$t("home_page.our_feed")}}</h3>
 		    </div>
 		    <div class="insta-feed-container">
-		        <div v-for="(item, index) in instaFeed" class="insta-container">
-                    <a :href="item.link" target="_blank">
-                        <div class="insta-feed-image"  v-lazy:background-image="item.images.standard_resolution.url">
-                            <p style="display:none;">{{item.caption.text}}</p>
+                        <div class="insta-feed-image " v-for="(item, index) in instaFeed">
+                            <a :href="item.link" target="_blank">
+                                <div class="insta-feed-background" v-bind:style="{ backgroundImage: 'url(' + item.images.standard_resolution.url + ')' }"></div>
+                                <div class="insta_content">
+                                    <div class="insta_caption">
+                                        <p>{{ item.caption.text }}</p>
+                                        <div>
+                                            <span>
+                                                <i class="fas fa-heart"></i> {{ item.likes.count }}
+                                            </span>
+                                            <span>
+                                                <i class="fas fa-comment"></i> {{ item.comments.count }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
+                    </div>
+		    <!--<div class="insta-feed-container">-->
+		    <!--    <div v-for="(item, index) in instaFeed" class="insta-container">-->
+      <!--              <a :href="item.link" target="_blank">-->
+      <!--                  <div class="insta-feed-image"  v-lazy:background-image="item.images.standard_resolution.url">-->
+      <!--                      <p style="display:none;">{{item.caption.text}}</p>-->
+      <!--                  </div>-->
+      <!--              </a>-->
+      <!--          </div>-->
+      <!--      </div>-->
             
 		</div>
 	</div>
