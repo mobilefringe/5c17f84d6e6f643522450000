@@ -84,7 +84,9 @@
                     dataloaded: false,
                     promoBanner: null,
                     // paginate: ['promos'],
-                    promos : null
+                    promos : null,
+                    incrementBy: 20,
+                    showMore: 20,
                 }
             },
             created() {
