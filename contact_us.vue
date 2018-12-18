@@ -110,7 +110,10 @@
                     var temp_repo = this.findRepoByName('Contact Us Banner');
                     if(temp_repo && temp_repo.images) {
                         this.pageBanner = temp_repo.images[0];
-                    } 
+                    } else {
+                        this.pageBanner= {};
+                        this.pageBanner.image_url = "";
+                    }
                 });
             },
             mounted () {
