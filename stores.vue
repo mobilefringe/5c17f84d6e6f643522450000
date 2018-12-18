@@ -56,7 +56,7 @@
 					<!--		</router-link>-->
 					<!--	</div>-->
 					<!--</div>-->
-					    <store-masonry :filteredStores="filteredStores"></store-masonry>
+				    <store-masonry :filteredStores="filteredStores"></store-masonry>
 				</div>
 			</div>
 		</div>
@@ -64,7 +64,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-select", "jquery", "smooth-zoom", "vue!png-map", "vue!search-component", "vue-lazy-load"], function(Vue, Vuex, VueSelect, $, smoothZoom, PNGMapComponent, SearchComponent,VueLazyload) {
+    define(["Vue", "vuex", "vue-select", "jquery", "smooth-zoom", "vue!png-map", "vue!search-component", "vue-lazy-load"], function(Vue, Vuex, VueSelect, $, smoothZoom, PNGMapComponent, SearchComponent,VueLazyload, StoreMasonry) {
         Vue.use(VueLazyload);
         return Vue.component("stores-component", {
             template: template, // the variable template will be injected
