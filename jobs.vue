@@ -88,7 +88,7 @@
                     filteredPromos:[],
                     dataloaded: false,
                     promoBanner: null,
-                    paginate: ['promos'],
+                    // paginate: ['promos'],
                     promos : null
                 }
             },
