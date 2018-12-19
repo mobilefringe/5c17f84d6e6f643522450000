@@ -43,15 +43,6 @@
                     </a>
                 </div>
             </div>
-		    <!--<div class="insta-feed-container">-->
-		    <!--    <div v-for="(item, index) in instaFeed" class="insta-container">-->
-      <!--              <a :href="item.link" target="_blank">-->
-      <!--                  <div class="insta-feed-image"  v-lazy:background-image="item.images.standard_resolution.url">-->
-      <!--                      <p style="display:none;">{{item.caption.text}}</p>-->
-      <!--                  </div>-->
-      <!--              </a>-->
-      <!--          </div>-->
-      <!--      </div>-->
             
 		</div>
 	</div>
