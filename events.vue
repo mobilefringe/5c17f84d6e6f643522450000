@@ -148,7 +148,7 @@
             data: function() {
                 return {
                     dataloaded: false,
-                    promoBanner: null,
+                    pageBanner: null,
                     // paginate: ['events'],
                     incrementBy: 5,
                     showMore: 5,
