@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="col-sm-4 promo_logo_container hidden_phone">
 					<div class="image_container">
-						<img v-if="currentPromo.store" :src="currentPromo.store.store_front_url_abs" class="image" :alt="currentPromo.store.name"/>
+						<img v-if="currentPromo.store" :src="currentPromo.store.store_front_url_abs" class="image" :alt="currentPromo.store.name+' Logo'"/>
 					</div>
 					<div class="text-center">
 					    <div v-if="currentPromo.promotionable_type == 'Store'">
