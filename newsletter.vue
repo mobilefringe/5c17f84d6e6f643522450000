@@ -83,7 +83,7 @@
             created () {
                 this.loadData().then(response => {
                     var temp_repo = this.findRepoByName('Newsletter Banner');
-                    if(temp_repo) {
+                    if(temp_repo && temp_repo.images) {
                         this.pageBanner = temp_repo.images[0];
                     }
                     // this.pageBanner = this.findRepoByName('Contact Us Banner').images[0];
