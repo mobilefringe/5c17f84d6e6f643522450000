@@ -1,7 +1,7 @@
 <!--restaurants-->
 <template>
 	<div v-if="dataloaded">
-		<div class="page_header" v-if="storeBanner" v-lazy:background-image="storeBanner.image_url">
+		<div class="page_header" v-if="pageBanner" v-lazy:background-image="storeBanner.image_url">
 			<div class="site_container">
 				<div class="header_content">
 					<h1>{{$t("stores_page.restaurants")}}</h1>
