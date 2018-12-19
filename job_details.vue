@@ -5,6 +5,7 @@
 				<div class="header_content caps">
 					<h1>{{$t("jobs_page.jobs")}}</h1>
 					<h2 style="display:none;">Scroll to  view job details</h2>
+					<h3 style="display:none;">Scroll to  view job details</h3>
 				</div>
 			</div>
 		</div>
