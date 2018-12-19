@@ -77,7 +77,7 @@
                     currentPromo: null,
                     storePromos : null,
                     storeHours : null,
-                    promoBanner : null
+                    pageBanner : null
                 }
             },
             beforeRouteUpdate(to, from, next) {
