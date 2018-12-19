@@ -16,8 +16,6 @@
 		    <div>
 		      <h3 class="home_page_title caps">{{$t("home_page.explore")}}</h3>
 		    </div>
-		    <!--<masonry-component class="hidden_phone" :featurelist="feature_items" :locale="locale"></masonry-component>-->
-      <!--      <masonry-component class="visible_phone" :featurelist="mobile_feature_items" :locale="locale"></masonry-component>-->
             <feature-masonry class="" :feature_items="feature_items" :locale="locale"></feature-masonry>
 		    <!--<feature-masonry class="visible_phone" :feature_items="mobile_feature_items" :locale="locale"></feature-masonry>-->
             <div>
