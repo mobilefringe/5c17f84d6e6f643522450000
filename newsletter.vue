@@ -90,8 +90,6 @@
                         this.pageBanner = {};
                         this.pageBanner.image_url = "";
                     }
-                    // this.pageBanner = this.findRepoByName('Contact Us Banner').images[0];
-                   console.log(this.pageBanner); 
                 });    
             },
             mounted () {
