@@ -52,7 +52,7 @@
                     currentEvent: null,
                     storeEvents : null,
                     storeHours : null,
-                    eventBanner : null
+                    pageBanner : null
                 }
             },
             props:['id', 'locale'],
