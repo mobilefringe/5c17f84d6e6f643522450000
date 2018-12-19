@@ -4,6 +4,8 @@
 			<div class="site_container">
 				<div class="header_content">
 					<h1>Contact Us</h1>
+					<h2 style="display:none;">Scroll to  view contact details</h2>
+					<h3 style="display:none;">Scroll to  view contact details</h3>
 				</div>
 			</div>
 		</div>  
