@@ -171,40 +171,40 @@
                     });
                     return features;
                 },
-                mobile_feature_items () {
-                    var mobile_features = this.$store.state.feature_items;
-                    _.forEach(mobile_features, function(value, key) {
+                // mobile_feature_items () {
+                //     var mobile_features = this.$store.state.feature_items;
+                //     _.forEach(mobile_features, function(value, key) {
                       
-                        if( _.includes([0,5], key) ) {
-                            value.masonry_class = "grid-item--height2";
-                        }
-                        else if ( _.includes([7], key) ){
-                            value.masonry_class = "grid-item--width2";
-                        }
-                        else {
-                            value.masonry_class = " ";
-                        }
+                //         if( _.includes([0,5], key) ) {
+                //             value.masonry_class = "grid-item--height2";
+                //         }
+                //         else if ( _.includes([7], key) ){
+                //             value.masonry_class = "grid-item--width2";
+                //         }
+                //         else {
+                //             value.masonry_class = " ";
+                //         }
                         
-                        if(key > 7) {
-                            value.mobile_order = key + 2;
-                        }
-                        else {
-                            value.mobile_order = key + 1;
-                        }
-                        if(key == 8) {
-                            value.mobile_order = 7;
-                        }
+                //         if(key > 7) {
+                //             value.mobile_order = key + 2;
+                //         }
+                //         else {
+                //             value.mobile_order = key + 1;
+                //         }
+                //         if(key == 8) {
+                //             value.mobile_order = 7;
+                //         }
                         
-                        if( _.includes(value.url, '//')) {
-                            value.do_anchor_tag = true;
-                        }
-                        else {
-                            value.do_anchor_tag = false;
-                        }
-                    });
-                    mobile_features = _.sortBy(mobile_features, [function(o) { return o.mobile_order; }]);
-                    return mobile_features;
-                }
+                //         if( _.includes(value.url, '//')) {
+                //             value.do_anchor_tag = true;
+                //         }
+                //         else {
+                //             value.do_anchor_tag = false;
+                //         }
+                //     });
+                //     mobile_features = _.sortBy(mobile_features, [function(o) { return o.mobile_order; }]);
+                //     return mobile_features;
+                // }
             },
             methods: {
                 loadData: async function() {
