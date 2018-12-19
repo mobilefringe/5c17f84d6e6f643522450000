@@ -73,7 +73,7 @@
                     selectedCat: null,
                     filteredStores: null,
                     dataloaded: false,
-                    storeBanner : null,
+                    pageBanner : null,
                     search_result : null,
                 }
             },
