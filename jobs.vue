@@ -63,7 +63,7 @@
 			<!--		<paginate-links for="promos" :async="true" :limit="5" :show-step-links="true"></paginate-links>-->
 			<!--	</div>-->
 			<!--</div>-->
-			<div class="show_more">
+			<div class="show_more"  v-if="promotions.length > 0">
               <div
                 class="pointer"
                 v-if="promos && showMore <= promos.length"
