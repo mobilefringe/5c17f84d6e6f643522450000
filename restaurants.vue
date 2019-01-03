@@ -1,7 +1,7 @@
 <!--restaurants-->
 <template>
 	<div v-if="dataloaded">
-		<div class="page_header" v-if="pageBanner" v-lazy:background-image="storeBanner.image_url">
+		<div class="page_header" v-if="pageBanner" v-lazy:background-image="pageBanner.image_url">
 			<div class="site_container">
 				<div class="header_content">
 					<h1>{{$t("stores_page.restaurants")}}</h1>
@@ -98,7 +98,7 @@
                     'storesByCategoryName',
                 ]),
                 restaurants() {
-                    var category_ids = [5724, 5721, 5723, 5722, 5706];
+                    var category_ids = [6695];
                     var filtered_restaurants =_.filter( this.processedStores, function(o) {
                         return _.intersection(category_ids, o.categories).length > 0;
                     });
