@@ -59,7 +59,7 @@
 						<div class="row store_promo_dets text-left" v-for="promo in promotions">
 							<div class="col-sm-6 no_padding" >
 								<div class="promo_div_image">
-									<img v-lazy="promo.image_url" class="image" alt=""/>
+									<img v-lazy="checkImageURL(promo)" class="image" alt=""/>
 								</div>
 								<div class="store_promo_dets_container padding_tb_20">
 								    <p class="promo_div_name" v-if="locale=='en-ca'">{{promo.name}}</p>
