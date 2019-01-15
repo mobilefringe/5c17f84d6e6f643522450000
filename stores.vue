@@ -12,7 +12,7 @@
 			<div class="row bold">
 				<div class="col-sm-6 col-md-4">
 					<div class="store_search" >
-						<search-component :list="allStores" :placeholder="$t('stores_page.find_your_store')" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
+						<search-component :list="allStores" :placeholder="$t('stores_page.find_your_store')" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left" :keys="['name']">
 							<template slot="item" scope="option" class="manual">
 								<article class="media">
 									<p>
