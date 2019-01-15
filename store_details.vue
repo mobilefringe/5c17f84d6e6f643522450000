@@ -234,7 +234,7 @@
                 dropPin(store) {
                     this.$refs.mapplic_ref.showLocation(store.svgmap_region);
                 },
-                updatePNGMap(map) {
+                updateSVGMap(map) {
                     this.map = map;
                      this.dropPin(this.currentStore);
                 },
