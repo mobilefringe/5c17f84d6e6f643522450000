@@ -21,26 +21,26 @@
             <div>
 		      <h3 class="home_page_title caps">{{$t("home_page.our_feed")}}</h3>
 		    </div>
-		    <div class="insta-feed-container">
-                <div class="insta-feed-image " v-for="(item, index) in instaFeed">
-                    <a :href="item.link" target="_blank">
-                        <div class="insta-feed-background" v-bind:style="{ backgroundImage: 'url(' + item.images.standard_resolution.url + ')' }"></div>
-                        <div class="insta_content">
-                            <div class="insta_caption">
-                                <p>{{ _.truncate(item.caption.text,{'length':75}) }}</p>
-                                <div>
-                                    <span>
-                                        <i class="fa fa-heart"></i> {{ item.likes.count }}
-                                    </span>
-                                    <span>
-                                        <i class="fa fa-comment"></i> {{ item.comments.count }}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+		    <!--<div class="insta-feed-container">-->
+      <!--          <div class="insta-feed-image " v-for="(item, index) in instaFeed">-->
+      <!--              <a :href="item.link" target="_blank">-->
+      <!--                  <div class="insta-feed-background" v-bind:style="{ backgroundImage: 'url(' + item.images.standard_resolution.url + ')' }"></div>-->
+      <!--                  <div class="insta_content">-->
+      <!--                      <div class="insta_caption">-->
+      <!--                          <p>{{ _.truncate(item.caption.text,{'length':75}) }}</p>-->
+      <!--                          <div>-->
+      <!--                              <span>-->
+      <!--                                  <i class="fa fa-heart"></i> {{ item.likes.count }}-->
+      <!--                              </span>-->
+      <!--                              <span>-->
+      <!--                                  <i class="fa fa-comment"></i> {{ item.comments.count }}-->
+      <!--                              </span>-->
+      <!--                          </div>-->
+      <!--                      </div>-->
+      <!--                  </div>-->
+      <!--              </a>-->
+      <!--          </div>-->
+      <!--      </div>-->
             
 		</div>
 	</div>
