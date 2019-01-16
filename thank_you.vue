@@ -27,7 +27,10 @@
                     'property',
                     'timezone',
                     'findRepoByName'
-                ])
+                ]),
+                pageBanner(){
+                
+            }
             },
             
         });
