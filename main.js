@@ -95,7 +95,7 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'datastore', 'vu
             this.loadData().then(response => {
                 this.dataLoaded = true;
                 this.locale = "en-ca";
-                this.property.default_logo_url = "//codecloud.cdn.speedyrails.net/sites/5c17f84d6e6f643522450000/image/png/1547659811147/EYTC logo (1).png";
+                this.property.default_logo_url = "//codecloud.cdn.speedyrails.net/sites/5c17f84d6e6f643522450000/image/png/1547671182930/EYTC default logo.png";
                 
             });
             window.addEventListener('scroll', this.enableStickyNavbar);
