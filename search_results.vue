@@ -129,6 +129,15 @@
                     } else {
                         this.$router.push("/");
                     }
+                },
+                checkResultImage(result){
+                    (result.store && _.includes(result.store.store_front_url_abs,'missing')) || (!result.store) || (!result.store_front_url_abs)
+                    if(result.store_front_url_abs){
+                        // this is a store
+                        if(_.includes(result.store_front_url_abs,'missing')))
+                    } else if(){
+                        
+                    }
                 }
             }
         });
