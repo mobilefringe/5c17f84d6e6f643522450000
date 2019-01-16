@@ -71,9 +71,9 @@
             },
             created(){
                this.updatePageData(this.id);
-               if(this.id == "bramaleacitycentre-accessibilty" ){
-                   this.updateAccessibilityData();
-               }
+            //   if(this.id == "bramaleacitycentre-accessibilty" ){
+            //       this.updateAccessibilityData();
+            //   }
             },
             computed: {
                 ...Vuex.mapGetters([
@@ -103,12 +103,12 @@
                         temp_repo = this.findRepoByName('Pages Banner');
                         
                         if(temp_repo && temp_repo.images) {
-                        this.pageBanner = temp_repo.images[0];
-                    }
-                    else {
-                        this.pageBanner = {};
-                        this.pageBanner.image_url = "";
-                    }
+                            this.pageBanner = temp_repo.images[0];
+                        }
+                        else {
+                            this.pageBanner = {};
+                            this.pageBanner.image_url = "";
+                        }
                     });
                 },
                 updateAccessibilityData() {
