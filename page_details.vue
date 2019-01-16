@@ -101,7 +101,14 @@
                         var temp_repo = null;
                         //Add custom banners for indivial pages 
                         temp_repo = this.findRepoByName('Pages Banner');
+                        //Add custom banners for indivial pages 
+                        if( _.includes(id, 'accessibility')) {
+                            temp_repo = this.findRepoByName('Giftcards Banner');
+                        }
                         
+                        else {
+                            temp_repo = this.findRepoByName('Pages Banner');
+                        }
                         if(temp_repo && temp_repo.images) {
                             this.pageBanner = temp_repo.images[0];
                         }
