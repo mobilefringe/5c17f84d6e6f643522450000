@@ -8,10 +8,7 @@
 				</div>
 			</div>
 		</div>
-        <div class="row">
-            <!--<img src="http://placehold.it/800x300" class="" alt="">-->
-        </div>
-        <div class="row">
+        <div class="row site_container">
             Your subscription has been confirmed. You've been added to our list and will hear from us soon.
         </div>
     </div>
