@@ -65,31 +65,8 @@
         </div>
     </div>
 </template>
-
-<!--<style>-->
-<!--    #contact_us_container .row{-->
-<!--        margin-left:inherit;-->
-<!--    }-->
-<!--    #contact_us_container {-->
-<!--        margin: 20px auto 0;-->
-<!--    }-->
-<!--    #contact_us_container .page_header {-->
-<!--        margin-bottom:20px;-->
-<!--    }-->
-<!--    #contact_us_container .property_address {-->
-<!--        margin-bottom:20px;-->
-<!--    }-->
-<!--    .form-group .form-control-feedback{-->
-<!--        font-size: 12px;-->
-        /*top:60px;*/
-<!--        color: #F44336;-->
-<!--        top: initial;-->
-<!--        bottom: -27px;-->
-<!--    }-->
-<!--</style>-->
-
 <script>
-    define(["Vue", "vuex", "vue-meta", 'vee-validate', 'utility'], function(Vue, Vuex, Meta, VeeValidate,Utility) {
+    define(["Vue", "vuex", "vue-meta", 'vee-validate', 'utility'], function(Vue, Vuex, Meta, VeeValidate, Utility) {
         Vue.use(Meta);
         Vue.use(VeeValidate);
         return Vue.component("contact-us-component", {
