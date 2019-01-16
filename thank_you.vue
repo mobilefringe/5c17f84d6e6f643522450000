@@ -41,6 +41,7 @@
                         pageBanner = {};
                         pageBanner.image_url = "";
                     }
+                    return pageBanner;
                 }
             },
             
