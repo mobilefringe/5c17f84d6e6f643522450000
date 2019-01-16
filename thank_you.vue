@@ -4,7 +4,7 @@
 			<!--http://via.placeholder.com/1920x300-->
 			<div class="site_container">
 				<div class="header_content">
-					<h1 v-if="locale=='en-ca'">Thank You</h1>
+					<h1>Thank You</h1>
 				</div>
 			</div>
 		</div>
