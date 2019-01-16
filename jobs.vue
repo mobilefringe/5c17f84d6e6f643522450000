@@ -149,7 +149,7 @@
                     }
                 },
                 shareURL(slug){
-                    var share_url = "http://bramaleacitycentre.com/jobs/" + slug;
+                    var share_url = "https://www.eastyorkshops.com/jobs/" + slug;
                     return share_url;
                 },
                 loadMoreItems() {
