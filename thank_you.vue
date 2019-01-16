@@ -1,6 +1,6 @@
 <template>
     <div class="page_container" id="thank_you_container">
-        <div class="page_header" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
+        <div  class="page_header">
 			<!--http://via.placeholder.com/1920x300-->
 			<div class="site_container">
 				<div class="header_content">
