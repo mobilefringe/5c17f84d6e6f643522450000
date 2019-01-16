@@ -146,7 +146,7 @@
                     }
                 },
                 shareURL(slug){
-                    var share_url = "http://bramaleacitycentre.com/events/" + slug;
+                    var share_url = "http://www.eastyorkshops.com/events/" + slug;
                     return share_url;
                 },
             }
