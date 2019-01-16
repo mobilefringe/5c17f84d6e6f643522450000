@@ -69,7 +69,7 @@
                     this.dataloaded = true;
                     this.filteredStores = this.allStores;
 
-                    var temp_repo = this.findRepoByName('Directory Banner');
+                    var temp_repo = this.findRepoByName('Map Banner');
                     if(temp_repo && temp_repo.images) {
                         this.pageBanner = temp_repo.images[0];
                     }
