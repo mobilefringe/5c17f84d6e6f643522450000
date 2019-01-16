@@ -30,15 +30,16 @@
                 ]),
                 pageBanner(){
                     var temp_repo = null;
+                    var pageBanner = null;
                     //Add custom banners for indivial pages 
                     temp_repo = this.findRepoByName('Pages Banner');
                     
                     if(temp_repo && temp_repo.images) {
-                        this.pageBanner = temp_repo.images[0];
+                        pageBanner = temp_repo.images[0];
                     }
                     else {
-                        this.pageBanner = {};
-                        this.pageBanner.image_url = "";
+                        pageBanner = {};
+                        pageBanner.image_url = "";
                     }
                 }
             },
