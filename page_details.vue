@@ -103,7 +103,7 @@
                         temp_repo = this.findRepoByName('Pages Banner');
                         //Add custom banners for indivial pages 
                         if( _.includes(id, 'accessibility')) {
-                            temp_repo = this.findRepoByName('Giftcards Banner');
+                            temp_repo = this.findRepoByName('Accessibility Banner');
                         }
                         
                         else {
