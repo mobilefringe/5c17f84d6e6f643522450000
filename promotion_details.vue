@@ -171,7 +171,7 @@
                     }
                 },
                 shareURL(slug){
-                    var share_url = "http://bramaleacitycentre.com/promotions/" + slug;
+                    var share_url = "https://www.eastyorkshops.com/promotions/" + slug;
                     return share_url;
                 },
             }
