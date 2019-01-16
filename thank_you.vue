@@ -22,11 +22,7 @@
     define(["Vue"], function(Vue) {
         return Vue.component("thank-you-component", {
             template: template, // the variable template will be injected
-            data: function() {
-                return {
-                    title: "title"
-                }
-            },
+            
             computed: {
                 ...Vuex.mapGetters([
                     'property',
