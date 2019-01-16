@@ -26,7 +26,14 @@
                 return {
                     title: "title"
                 }
-            }
+            },
+            computed: {
+                ...Vuex.mapGetters([
+                    'property',
+                    'timezone',
+                    'findRepoByName'
+                ])
+            },
         });
     });
 </script>
