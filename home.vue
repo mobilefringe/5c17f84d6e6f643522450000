@@ -120,9 +120,9 @@
                 ]),
                 banners () { 
                     var banners = this.$store.state.banners;
-                     _.forEach(banners, function(banner, key) {
-                        banner.image_url = banner.image_url = "https://picsum.photos/1920/600?image=52"+key;
-                    })
+                    //  _.forEach(banners, function(banner, key) {
+                    //     banner.image_url = banner.image_url = "https://picsum.photos/1920/600?image=52"+key;
+                    // })
                     return _.orderBy(banners, ['position'], ['asc']);
                 },
                 feature_items () {
