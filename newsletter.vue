@@ -23,15 +23,13 @@
                                 <label class="label" for="newsletter_email">{{$t("newsletter_page.email")}}</label>
                                 <input v-model="form_data.email" required class="form-control js-cm-email-input" name="cm-gmdyi-gmdyi" type="email" placeholder="Email" id="newsletter_email">
                             </div>
-                        </div>
-                        <div class="form-group">
                             <div class="col-xs-12">
     					        <label class="checkbox">
                                     <input name="agree_newsletter" required  type="checkbox">
                                         {{$t("newsletter_page.agree")}} {{property.name}}. 
                                 </label>
     					    </div>
-    					</div>
+                        </div>
     					<div class="form-group">
                             <div class="col-xs-12">
                                 <button class="contest_btn" type="submit" :disabled="formSuccess">{{$t("newsletter_page.subscribe")}}</button>
