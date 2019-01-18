@@ -58,10 +58,10 @@
 					<p>{{$t("jobs_page.no_job_message")}}</p>
 				</div>
 			</div>
-			<div class="show_more"  v-if="promotions.length > 0">
+			<div class="show_more"  v-if="promos && showMore <= promos.length">
               <div
                 class="pointer"
-                v-if="promos && showMore <= promos.length"
+                
                 @click="loadMoreItems()"
               >{{$t("promos_page.more_promos")}}</div>
             </div>
