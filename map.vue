@@ -34,18 +34,7 @@
 		</div>
 	</div>
 </template>
-<style>
-	#png_map{
-	    width:2500px;
-		height: 2500px;
-		min-width:2500px;
-		min-height: 2500px;
-	}
-	#zoom_container .landmarks .mark .text {
-        background-color: #fff;
-        border: 1px solid;
-	}
-</style>
+
 <script>
     define(["Vue", "vuex", "vue-select", "vue!mapplic-map"], function(Vue, Vuex, VueSelect, MapplicComponent) {
         return Vue.component("stores-component", {
