@@ -28,8 +28,8 @@
                                     <span v-if="locale=='en-ca'">{{hour.holiday_name}}</span>
                                     <span v-else>{{hour.holiday_name_2}}</span>
                                     ({{hour.holiday_date | moment("MMM D YYYY", timezone)}}) :
-                                    <span class="opening_hours">{{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}</span>
                                 </span>
+                                <span class="opening_hours">{{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}</span>
                             </div>
                         </div>
                         <div class="padding_top_20"></div>
