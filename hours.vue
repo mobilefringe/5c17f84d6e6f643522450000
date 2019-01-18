@@ -20,7 +20,6 @@
                             </div>
                         </div>
                     </div>
-                
                     <div class="col-sm-6 ">
                         <h3 class="hours_heading text-left">{{$t("hours_page.holiday_hours")}}</h3>
                         <div id="holidays_hours_container" class="hours_container">
@@ -33,10 +32,6 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 ">
                         <div class="padding_top_20"></div>
                         
                         <h3 class="hours_heading text-left">{{$t("hours_page.holiday_closures")}}</h3>
