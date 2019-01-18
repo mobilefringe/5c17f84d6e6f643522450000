@@ -59,10 +59,9 @@
 					<p>{{$t("events_page.no_event_message")}}</p>
 				</div>
 			</div>
-			<div class="show_more" v-if="promos && showMore <= promos.length"
+			<div class="show_more"  v-if="promos && showMore <= promos.length">
               <div
                 class="pointer"
-                
                 @click="loadMoreItems()"
               >{{$t("events_page.more_promos")}}</div>
             </div>
