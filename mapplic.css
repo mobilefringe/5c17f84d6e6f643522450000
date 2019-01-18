@@ -416,7 +416,7 @@
 .mapplic-zoom-buttons {
 	margin: 10px;
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 40px;
 }
 
