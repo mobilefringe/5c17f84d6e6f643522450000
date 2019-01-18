@@ -23,9 +23,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            
-                        </div>
-                        <div class="form-group">
                             <div class="col-xs-12">
     					        <label class="checkbox">
                                     <input name="agree_newsletter" required  type="checkbox">
