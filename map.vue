@@ -31,6 +31,7 @@
     				<mapplic-map ref="mapplic_ref" :height="650" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="mapStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
     			</div>
             </div>
+            <div class="padding_top_20"></div>
 		</div>
 	</div>
 </template>
