@@ -8,7 +8,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="site_container clearfix">
+		<div class="map_container site_container clearfix">
 			<div class="col-sm-4">
                 <div class="map_directory text-center hidden_phone">
                     <h2 style="display:none;" class="map_title caps">{{$t("stores_page.find_store")}}</h2>
