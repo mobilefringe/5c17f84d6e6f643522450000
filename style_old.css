@@ -699,14 +699,14 @@ strong, .bold {
             }
         }
         #search_box::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-          color: #fff;
-      }
-      #search_box::-moz-placeholder { /* Firefox 19+ */
-          color: #fff;
-      }
-      #search_box:-ms-input-placeholder { /* IE 10+ */
-          color: #fff;
-      }
+              color: #fff;
+          }
+          #search_box::-moz-placeholder { /* Firefox 19+ */
+              color: #fff;
+          }
+          #search_box:-ms-input-placeholder { /* IE 10+ */
+              color: #fff;
+          }
         #siteSearchBtn {
           cursor: pointer;
         }
