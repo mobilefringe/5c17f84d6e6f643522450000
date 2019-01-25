@@ -80,14 +80,7 @@
 		</div>
 	</div>
 </template>
-<style>
-	#png_map{
-	    width:2500px;
-		height: 2500px;
-		min-width:2500px;
-		min-height: 2500px;
-	}
-</style>
+
 <script>
     define(['Vue', 'vuex', 'moment', "vue!mapplic-map", 'vue-lazy-load'], function(Vue, Vuex, moment, MapplicComponent, VueLazyload) {
         Vue.use(VueLazyload);
