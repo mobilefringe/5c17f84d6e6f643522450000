@@ -118,19 +118,19 @@
                         }
                     });
                 },
-                updateAccessibilityData() {
-                    var vm = this;
-                    url = "//acc.speeker.co/get_display_templates?site_id=1";
-                    $.getJSON(url).done(function(data){
-                        var acc_data = data;
-                        acc_data.map(item => {
-                            item.notice_text_approved = _.replace(item.notice_text_approved, '<br/><br/>', '<br/>');
-                        });
+                // updateAccessibilityData() {
+                //     var vm = this;
+                //     url = "//acc.speeker.co/get_display_templates?site_id=1";
+                //     $.getJSON(url).done(function(data){
+                //         var acc_data = data;
+                //         acc_data.map(item => {
+                //             item.notice_text_approved = _.replace(item.notice_text_approved, '<br/><br/>', '<br/>');
+                //         });
                         
-                        vm.accessibilityData =  _.sortBy(acc_data, [function(o) { return o.service_completed_date; }]).reverse();
-                        console.log("accessibilityData",vm.accessibilityData)
-                    });
-                }
+                //         vm.accessibilityData =  _.sortBy(acc_data, [function(o) { return o.service_completed_date; }]).reverse();
+                //         console.log("accessibilityData",vm.accessibilityData)
+                //     });
+                // }
             }
         });
     });
