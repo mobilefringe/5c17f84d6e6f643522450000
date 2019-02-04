@@ -100,7 +100,7 @@
                     return ordered_hours;
                 },
                 holidayHours () {
-                    return this.getPropertyHolidayHours;
+                    return _.sortBy(this.getPropertyHolidayHours,['holiday_date']);
                 },
                 reducedHolidays () {
                     var holidayHours = this.holidayHours;
