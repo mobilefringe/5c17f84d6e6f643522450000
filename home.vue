@@ -19,7 +19,7 @@
             <feature-masonry class="" :feature_items="feature_items" :locale="locale"></feature-masonry>
 		    <!--<feature-masonry class="visible_phone" :feature_items="mobile_feature_items" :locale="locale"></feature-masonry>-->
             <div>
-		      <h3 class="home_page_title caps">{{$t("home_page.our_feed")}}</h3>
+		      <h3 class="home_page_title caps" v-if="instaFeed && instaFeed.length > 0">{{$t("home_page.our_feed")}}</h3>
 		    </div>
 		    <div class="insta-feed-container">
                 <div class="insta-feed-image " v-for="(item, index) in instaFeed">
