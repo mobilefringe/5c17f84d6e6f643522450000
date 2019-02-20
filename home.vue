@@ -119,10 +119,21 @@
                     'findMetaDataByPath'
                 ]),
                 banners () { 
-                    var banners = this.$store.state.banners;
-                    //  _.forEach(banners, function(banner, key) {
-                    //     banner.image_url = banner.image_url = "https://picsum.photos/1920/600?image=52"+key;
-                    // })
+                    var banners = [];//this.$store.state.banners;
+                    _.forEach(this.$store.state.banners, function(value, key) {
+                        var today = new Date();
+                        var start = new Date (value.start_date);
+                        if (start <= today){
+                            if (value.end_date){
+                                var end = new Date (value.end_date);
+                                if (end >= today){
+                                    banners.push(value);  
+                                }
+                            } else {
+                                banners.push(value);
+                            }
+                        }
+                    })
                     return _.orderBy(banners, ['position'], ['asc']);
                 },
                 feature_items () {
