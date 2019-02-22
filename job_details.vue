@@ -39,7 +39,7 @@
 					<h3 class="promo_name" style="margin: 20px auto 0px;" v-else>{{currentJob.name_2}}</h3>
 					<div class="row">
 						<p class="promo_div_date pull-left">{{currentJob.start_date | moment("MMM D", timezone)}} - {{currentJob.end_date | moment("MMM D", timezone)}}</p>
-						<social-sharing :url="shareURL(currentJob.slug)" :title="currentJob.title" :description="currentJob.body" :quote="_.truncate(currentJob.description, {'length': 99})" twitter-user="BCCstyle" :media="currentJob.image_url" inline-template >
+						<social-sharing :url="shareURL(currentJob.slug)" :title="currentJob.title" :description="currentJob.body" :quote="_.truncate(currentJob.description, {'length': 99})" :twitter-user="$root.twitter_user" :media="currentJob.image_url" inline-template >
 							<div class="blog-social-share pull-right" style="margin: 15px auto;">
 								<div class="social_share">
 									<network network="facebook">
