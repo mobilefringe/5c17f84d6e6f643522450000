@@ -33,7 +33,7 @@
 								<router-link :to="'/jobs/'+ promo.slug" class="event_learn_more pull-left hvr-icon-wobble-horizontal"  :aria="promo.name">
 									{{$t("jobs_page.read_more")}} <i class="fa fa-angle-right hvr-icon" aria-hidden="true"></i>
 								</router-link>
-								<social-sharing :url="shareURL(promo.slug)" :title="promo.title" :description="promo.body" :quote="_.truncate(promo.description, {'length': 99})" twitter-user="BCCstyle" :media="promo.image_url" inline-template >
+								<social-sharing :url="shareURL(promo.slug)" :title="promo.title" :description="promo.body" :quote="_.truncate(promo.description, {'length': 99})" :twitter-user="$root.twitter_user" :media="promo.image_url" inline-template >
 									<div class="blog-social-share pull_right">
 										<div class="social_share">
 											<network network="facebook">
@@ -61,7 +61,6 @@
 			<div class="show_more"  v-if="promos && showMore <= promos.length">
               <div
                 class="pointer"
-                
                 @click="loadMoreItems()"
               >{{$t("promos_page.more_promos")}}</div>
             </div>
