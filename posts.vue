@@ -38,7 +38,7 @@
                     <router-link :to="{ name: 'postDetails', params: { id: post.slug }}" class="post_read_more"  :aria="post.title">
 					   {{ $t("blog_page.read_post") }} <i class="fa fa-angle-right" aria-hidden="true"></i>
 				    </router-link>
-			        <social-sharing :url="shareURL(post.slug)" :title="post.title" :description="post.body" :quote="_.truncate(post.description, {'length': 99})" twitter-user="BCCstyle" :media="post.image_url" inline-template >
+			        <social-sharing :url="shareURL(post.slug)" :title="post.title" :description="post.body" :quote="_.truncate(post.description, {'length': 99})" :twitter-user="$root.twitter_user" :media="post.image_url" inline-template >
 						<div class="post_list_share">
 							<div class="social_share">
 								<network network="facebook">
