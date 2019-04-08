@@ -38,7 +38,7 @@ require.config({
         'vue-paginate': 'https://cdnjs.cloudflare.com/ajax/libs/vue-paginate/3.5.1/vue-paginate',
         'loader': 'https://mmvue.codecloudapp.com/loader.vue?noext',
         'campaignMonitor': 'https://js.createsend1.com/javascript/copypastesubscribeformlogic',
-        'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
+        // 'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
         'store-masonry': 'https://mmvue.codecloudapp.com/storelist_masonry.vue?noext',
         //png-map dependencies
         'mousewheel' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min',
