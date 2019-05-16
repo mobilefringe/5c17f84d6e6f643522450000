@@ -26,7 +26,7 @@
                             <div class="col-xs-12">
     					        <label class="checkbox">
                                     <input name="agree_newsletter" required  type="checkbox">
-                                        {{$t("newsletter_page.agree")}} {{property.name}}. 
+                                        I agree to receive Commercial Electronic Messages from Morguard, the management company of {{ property.name }} and its affiliates that will include: special retail sales offers, promotions, new retailer announcements, upcoming events, trend and style news and other inside information. You can unsubscribe at any time by emailing <a :href="'mailto:' + property.contact_email">{{ property.contact_email }}</a>. {{ property.name }}’s contact information is as follows: {{ property.address1 }}, {{ property.city }}, {{ property.province_state }}, {{ property.postal_code }}, Attention: Privacy Officer. Website: <a href="https://eastyorkshops.com/">eastyorkshops.com</a>
                                 </label>
     					    </div>
     					</div>
