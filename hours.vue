@@ -104,6 +104,9 @@
                 },
                 reducedHolidays () {
                     var holidayHours = this.holidayHours;
+                    var extendedHours = this.getPropertyExtendedHours;
+                    var open_holidays = _.concat(holidayHours, extendedHours);
+                    console.log("open_holidays", open_holidays)
                     return _.filter(holidayHours, function(o) { return !o.is_closed; });
                 },
                 closeHolidays () {
@@ -117,9 +120,7 @@
                             holidays.push(val);
                         }
                     });
-                    
-                    console.log("holidays", holidays)
-                    
+
                     return _.sortBy(holidays, function(o) { return o.holiday_date; });
                 },
                 extendedHours () {
