@@ -120,7 +120,6 @@
                             holidays.push(val);
                         }
                     });
-
                     return _.sortBy(holidays, function(o) { return o.holiday_date; });
                 },
                 extendedHours () {
