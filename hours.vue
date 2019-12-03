@@ -19,14 +19,6 @@
                                 <span>{{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}</span>
                             </div>
                         </div>
-                        <div class="padding_top_20"></div>
-                        <h3 v-if="extendedHours.length" class="hours_heading text-left">{{$t("hours_page.extended_hours")}}</h3>
-                        <div v-if="extendedHours.length" class="hours_container">
-                            <div class="hours_div text-left" v-for="hour in extendedHours">
-                                <span>{{ hour.holiday_date | moment("MMM D YYYY", timezone)}}:</span>
-                                <span class="opening_hours">{{ hour.open_time | moment("h:mm A", timezone) }} - {{ hour.close_time | moment("h:mm A", timezone) }}</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-sm-6 ">
                         <h3 class="hours_heading text-left">{{$t("hours_page.holiday_hours")}}</h3>
@@ -41,7 +33,6 @@
                             </div>
                         </div>
                         <div class="padding_top_20"></div>
-                        
                         <h3 class="hours_heading text-left">{{$t("hours_page.holiday_closures")}}</h3>
                         <div id="closed_hours_container" class="hours_container">
                             <div class="hours_div text-left" v-for="hour in closeHolidays">
@@ -117,6 +108,19 @@
                 },
                 closeHolidays () {
                     var holidayHours = this.holidayHours;
+                    var closed_holidays = _.filter(holidayHours, function(o) { return o.is_closed; });
+                    console.log("closed_holidays", closed_holidays)
+                    var holidays = [];
+                    // _.forEach(closed_holidays, function(val, key) {
+                    //     var today = moment().format('X');
+                    //     var end_date = moment('2020-01-07').format('X')
+                    //     if (today < end_date) {
+                    //         DecJanOnly.push(val)
+                    //     }
+                    // }) 
+                    
+                    
+                    
                     return _.sortBy(_.filter(holidayHours, function(o) { return o.is_closed; }), [function(o) { return o.holiday_date; }]);
                 },
                 extendedHours () {
