@@ -87,7 +87,8 @@
     "hours" : "Hours",
     "reg_hours" : "Regular Shopping Hours",
     "holiday_hours" : "Holiday Hours",
-    "holiday_closures" : "Holiday Closures"
+    "holiday_closures" : "Holiday Closures",
+    "extended_hours" : "Extended Hours"
   },
   "newsletter_page" : {
     "newsletter" : "Newsletter",
