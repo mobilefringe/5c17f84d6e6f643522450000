@@ -19,9 +19,9 @@
                                 <span>{{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}</span>
                             </div>
                         </div>
-                         <div class="padding_top_20"></div>
-                        <h3 class="hours_heading text-left">{{$t("hours_page.extended_hours")}}</h3>
-                        <div id="holidays_hours_container" class="hours_container">
+                        <div class="padding_top_20"></div>
+                        <h3 v-if="extendedHours" class="hours_heading text-left">{{$t("hours_page.extended_hours")}}</h3>
+                        <div v-if="extendedHours" class="hours_container">
                             <div class="hours_div text-left" v-for="hour in extendedHours">
                                 <span>
                                     <span v-if="locale=='en-ca'">{{hour.holiday_name}}</span>
