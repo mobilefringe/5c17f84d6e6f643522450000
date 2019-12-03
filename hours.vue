@@ -20,8 +20,8 @@
                             </div>
                         </div>
                         <div class="padding_top_20"></div>
-                        <h3 v-if="extendedHours" class="hours_heading text-left">{{$t("hours_page.extended_hours")}}</h3>
-                        <div v-if="extendedHours" class="hours_container">
+                        <h3 v-if="extendedHours.length" class="hours_heading text-left">{{$t("hours_page.extended_hours")}}</h3>
+                        <div v-if="extendedHours.length" class="hours_container">
                             <div class="hours_div text-left" v-for="hour in extendedHours">
                                 <span>
                                     <span v-if="locale=='en-ca'">{{hour.holiday_name}}</span>
