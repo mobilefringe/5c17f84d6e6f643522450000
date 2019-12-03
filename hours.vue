@@ -15,7 +15,7 @@
                         <h3 class="hours_heading text-left" >{{$t("hours_page.reg_hours")}}</h3>
                         <div id="hours_container" class="hours_container">
                             <div class="hours_div text-left" v-for="hour in hours">
-                                <span>{{hour.day_of_week | moment("dddd", timezone)}} : </span>
+                                <span>{{hour.day_of_week | moment("dddd", timezone)}}: </span>
                                 <span>{{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}</span>
                             </div>
                         </div>
