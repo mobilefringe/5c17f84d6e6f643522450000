@@ -91,14 +91,15 @@
                 ]),
                 hours () {
                    var hours = _.sortBy(this.getPropertyHours, ['day_of_week']);
-                    var ordered_hours = [];
-                    _.forEach(hours, function (val, key) {
-                    //   if(val.day_of_week !== 0) {
-                    //       ordered_hours.push(val);
-                    //   }
-                    });
-                    ordered_hours.push(hours[0]);
-                    return ordered_hours;
+                    // var ordered_hours = [];
+                    // _.forEach(hours, function (val, key) {
+                    // //   if(val.day_of_week !== 0) {
+                    // //       ordered_hours.push(val);
+                    // //   }
+                    // });
+                    // ordered_hours.push(hours[0]);
+                    // return ordered_hours;
+                    return hours
                 },
                 holidayHours () {
                     return _.sortBy(this.getPropertyHolidayHours,['holiday_date']);
