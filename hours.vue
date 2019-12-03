@@ -111,13 +111,13 @@
                     var closed_holidays = _.filter(holidayHours, function(o) { return o.is_closed; });
                     console.log("closed_holidays", closed_holidays)
                     var holidays = [];
-                    // _.forEach(closed_holidays, function(val, key) {
-                    //     var today = moment().format('X');
-                    //     var end_date = moment('2020-01-07').format('X')
-                    //     if (today < end_date) {
-                    //         DecJanOnly.push(val)
-                    //     }
-                    // }) 
+                    _.forEach(closed_holidays, function(val, key) {
+                        var today = moment().format('X');
+                        var holiday_date = moment(val.holiday_date).format('X');
+                        if (today > holiday_date) {
+                            holidays.push(val);
+                        }
+                    }) 
                     
                     
                     
