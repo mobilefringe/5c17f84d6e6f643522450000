@@ -103,7 +103,7 @@
                     return _.sortBy(this.getPropertyHolidayHours,['holiday_date']);
                 },
                 reducedHolidays () {
-                    var holidayHours = this.holidayHours;
+                    var holidayHours = _.filter(this.holidayHours, function(o) { return !o.is_closed; });
                     var extendedHours = this.getPropertyExtendedHours;
                     var open_holidays = _.concat(holidayHours, extendedHours);
                     console.log("open_holidays", open_holidays)
