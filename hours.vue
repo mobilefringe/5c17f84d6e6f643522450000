@@ -33,9 +33,9 @@
                         <div id="holidays_hours_container" class="hours_container">
                             <div class="hours_div text-left" v-for="hour in reducedHolidays">
                                 <span>
-                                    <span v-if="locale=='en-ca'">{{hour.holiday_name}}</span>
-                                    <span v-else>{{hour.holiday_name_2}}</span>
-                                    ({{hour.holiday_date | moment("MMM D YYYY", timezone)}}) :
+                                    <span v-if="locale=='en-ca'">{{ hour.holiday_name }}</span>
+                                    <span v-else>{{ hour.holiday_name_2 }}</span>
+                                    ({{ hour.holiday_date | moment("MMM D YYYY", timezone) }}):
                                 </span>
                                 <span class="opening_hours">{{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}</span>
                             </div>
@@ -79,14 +79,13 @@
             created() {
                 this.loadData().then(response => {
                     var temp_repo = this.findRepoByName('Hours Banner');
-                    if(temp_repo && temp_repo.images) {
+                    if (temp_repo && temp_repo.images) {
                         this.pageBanner = temp_repo.images[0];
                     } else {
                         this.pageBanner= {};
                         this.pageBanner.image_url = "";
                     }
                 });
-                
             },
             computed: {
                 ...Vuex.mapGetters([
@@ -128,7 +127,6 @@
             methods : {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
                         let results = await Promise.all([this.$store.dispatch("getData", "repos")]);
                         return results;
                     } catch (e) {
