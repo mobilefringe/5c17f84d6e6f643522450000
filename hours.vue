@@ -109,7 +109,6 @@
                     var holidayHours = _.filter(this.holidayHours, function(o) { return !o.is_closed; });
                     var extendedHours = this.getPropertyExtendedHours;
                     var open_holidays = _.concat(holidayHours, extendedHours);
-                    console.log("open_holidays", open_holidays)
                     var holidays = [];
                     _.forEach(open_holidays, function(val, key) {
                         var today = moment().format('X');
@@ -119,7 +118,6 @@
                         }
                     });
                     return _.sortBy(holidays, function(o) { return o.holiday_date; });
-                    // return _.filter(holidayHours, function(o) { return !o.is_closed; });
                 },
                 closeHolidays () {
                     var holidayHours = this.holidayHours;
@@ -147,7 +145,7 @@
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
-                },
+                }
             }
         });
     });
