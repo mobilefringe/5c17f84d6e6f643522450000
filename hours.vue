@@ -116,7 +116,7 @@
                         console.log("today", today)
                         var holiday_date = moment(val.holiday_date).format('X');
                         console.log("holiday_date", holiday_date)
-                        if (today > holiday_date) {
+                        if (today < holiday_date) {
                             holidays.push(val);
                         }
                     }) 
