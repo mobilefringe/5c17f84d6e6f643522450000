@@ -95,14 +95,13 @@
             watch : {
                 dataLoaded () {
                     var viewed = Cookies.get('popup_viewed');
-                    if(this.popup !== null && this.popup !== undefined && viewed !== "true") {
+                    if (this.popup !== null && this.popup !== undefined && viewed !== "true") {
                         Cookies.set('popup_viewed', "true");
                         viewed = Cookies.get('popup_viewed');
                         this.show_popup = true;
-                        this.popup.image_url = "//mallmaverick.cdn.speedyrails.net" + this.popup.photo_url;
+                        this.popup.image_url = "//assets.mallmaverick.com" + this.popup.photo_url;
                         document.getElementById('popup_backdrop').style.display = "block";
-                    }
-                    else {
+                    } else {
                         document.getElementById('popup_backdrop').style.display = "none";
                     }
                 },
@@ -138,46 +137,43 @@
                     return _.orderBy(banners, ['position'], ['asc']);
                 },
                 feature_items () {
-                    // return this.$store.state.feature_items;
                     var features = this.$store.state.feature_items;
                     _.forEach(features, function(value, key) {
-                      
-                        if( _.includes([4,5], key) ) {
+                        if (_.includes([4,5], key)) {
                             value.masonry_class = "grid-item--height2 grid-item--width2";
-                            // value.image_url = "https://picsum.photos/570/1140?image=98"+key;
-                        }
-                        // else if ( _.includes([0,1], key) ){
-                        //     value.masonry_class = "grid-item--width2";
-                        //     // value.image_url = "https://picsum.photos/1140/570?image=97"+key;
-                        // }
-                        else {
+                        } else {
                             value.masonry_class = " ";
-                            // value.image_url = "https://picsum.photos/570/570?image=88"+key;
                         }
-                        if(value.name === null || value.name === undefined || value.name.length == 0) {
+                        
+                        ifb(value.name === null || value.name === undefined || value.name.length == 0) {
                             value.no_hover_class = false;
-                        }
-                        else {
+                        } else {
                             value.no_hover_class = true;
                         }
-                        if(value.url ==  null ||value.url == undefined || value.url.length == 0 ) {
+                        
+                        if (value.url ==  null ||value.url == undefined || value.url.length == 0 ) {
                             value.no_link = true;
                         }
-                        if( _.includes(value.url, '//')) {
+                        
+                        if (_.includes(value.url, '//')) {
                             value.do_anchor_tag = true;
-                        }
-                        else {
+                        } else {
                             value.do_anchor_tag = false;
                         }
                     });
                     return features;
-                },
+                }
             },
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
-                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData", "feature_items"), this.$store.dispatch("getData", "promotions"), this.$store.dispatch("getData", "popups"), this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host +"/api/v4/eastyork/social.json"})]);
+                        let results = await Promise.all([
+                            this.$store.dispatch("getData", "banners"), 
+                            this.$store.dispatch("getData", "feature_items"), 
+                            this.$store.dispatch("getData", "promotions"), 
+                            this.$store.dispatch("getData", "popups"), 
+                            this.$store.dispatch('LOAD_PAGE_DATA', { url: this.property.mm_host +"/api/v4/eastyork/social.json" })
+                        ]);
                         return results;
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
@@ -200,8 +196,6 @@
                     ] 
                 }
             }
-
-            
         })
     })
 </script>
