@@ -12,10 +12,9 @@
 			<div class="row">
 				<div class="col-sm-4 promo_logo_container hidden_phone">
 					<div class="image_container details_store_image">
-						<!--<img v-lazy="currentStore.store_front_url_abs" class="image"/>-->
 						<div v-if="currentStore.no_store_logo" class="store_details_image center-block">
                             <div class="no_logo">
-                            <img class="store_img" src="//www.mallmaverick.com/system/site_images/photos/000/041/782/original/transparent_logo.png?1533845225" alt="">
+                                <img class="store_img" src="//assets.mallmaverick.com/system/site_images/photos/000/041/782/original/transparent_logo.png?1533845225" alt="">
                                 <p class="store_details_name">{{ currentStore.name }}</p>
                             </div>    
                         </div>
@@ -24,7 +23,6 @@
 				</div>
 				<div class="col-sm-8 promo_image_container text-left">
 					<div class="col-sm-12 no_padding">
-						<!--<png-map ref="pngmapref" v-bind:png-map-url="getPNGurl" :initial-position="'1250 1250'" :height="_.toNumber('625')" @updateMap="updatePNGMap"></png-map>-->
 						<mapplic-map ref="mapplic_ref" :height="358" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="mapStores" :floorlist="floorList" tooltiplabel="View Store Details" @updateMap="updateSVGMap"></mapplic-map>
 					</div>
 				</div>
@@ -174,13 +172,6 @@
                     'findRepoByName',
                     'findHourById'
                 ]),
-                // getPNGurl () {
-                //     return "https://www.mallmaverick.com" + this.property.map_url;
-                // },
-                // pngMapRef() {
-                //     return this.$refs.pngmapref;
-                // },
-                
                 mapStores() {
                     var all_stores = this.processedStores;
                     _.forEach(all_stores, function(value, key) {
@@ -195,7 +186,7 @@
                     return _.map(this.processedStores, 'name');
                 },
                 getSVGMap(){
-                  return "//mallmaverick.com"+this.property.svgmap_url;  
+                    return "//assets.mallmaverick.com" + this.property.svgmap_url;  
                 },
                 floorList () {
                     var floor_list = [];
@@ -213,8 +204,11 @@
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
-                        let results = await Promise.all([this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData", "jobs"),this.$store.dispatch("getData", "repos")]);
+                        let results = await Promise.all([
+                            this.$store.dispatch("getData","promotions"), 
+                            this.$store.dispatch("getData", "jobs"),
+                            this.$store.dispatch("getData", "repos")
+                        ]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
@@ -230,24 +224,20 @@
                 },
                 updateSVGMap(map) {
                     this.map = map;
-                     this.dropPin(this.currentStore);
+                    this.dropPin(this.currentStore);
                 },
                 checkImageURL(value) {
-                  if (_.includes(value.image_url, "missing")) {
-                    if (value.store === null || value.store === undefined) {
-                      return "//codecloud.cdn.speedyrails.net/sites/5c17f84d6e6f643522450000/image/png/1545071987721/logo.png";
-                    } else if (
-                      value.store != null &&
-                      value.store != undefined &&
-                      _.includes(value.store.store_front_url_abs, "missing")
-                    ) {
-                      return "//codecloud.cdn.speedyrails.net/sites/5c17f84d6e6f643522450000/image/png/1545071987721/logo.png";
+                    if (_.includes(value.image_url, "missing")) {
+                        if (value.store === null || value.store === undefined) {
+                            return "//codecloud.cdn.speedyrails.net/sites/5c17f84d6e6f643522450000/image/png/1545071987721/logo.png";
+                        } else if (value.store != null && value.store != undefined && _.includes(value.store.store_front_url_abs, "missing")) {
+                            return "//codecloud.cdn.speedyrails.net/sites/5c17f84d6e6f643522450000/image/png/1545071987721/logo.png";
+                        } else {
+                            return value.store.store_front_url_abs;
+                        }
                     } else {
-                      return value.store.store_front_url_abs;
+                        return value.promo_image_url_abs;
                     }
-                  } else {
-                    return value.promo_image_url_abs;
-                  }
                 }
             }
         });
