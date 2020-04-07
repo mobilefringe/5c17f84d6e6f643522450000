@@ -112,7 +112,7 @@
                     return _.map(this.processedStores, 'name');
                 },
                 getSVGMap(){
-                  return "//mallmaverick.com"+this.property.svgmap_url;  
+                    return "//assets.mallmaverick.com" + this.property.svgmap_url;  
                 },
                 floorList () {
                     var floor_list = [];
@@ -130,7 +130,10 @@
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos")]);
+                        let results = await Promise.all([
+                            this.$store.dispatch("getData", "categories"), 
+                            this.$store.dispatch("getData", "repos")
+                        ]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
@@ -144,11 +147,11 @@
                 onOptionSelect(option) {
                     this.search_result = "";
                     this.dropPin(option);
-                },
+                }
             },
             beforeDestroy: function() {
                 window.removeEventListener('resize', this.getWindowWidth);
-            },
+            }
         });
     });
 </script>
