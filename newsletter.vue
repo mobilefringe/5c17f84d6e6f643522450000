@@ -13,8 +13,18 @@
                     <div>
                     	<form class="js-cm-form" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A81D752E65D1343149419CFE6F31FB9FC485EC64DB3B1F2BFCE89F102C7BEDDB2B889805DCB36B9DCB4BE962FC8F40C1A">
                     		<div>
-                    			<div><label>Name </label><input aria-label="Name" id="fieldName" maxlength="200" name="cm-name"></div>
-                    			<div><label>Email </label><input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email" id="fieldEmail" maxlength="200" name="cm-gmdyi-gmdyi" required="" type="email"></div>
+                    			<div> 
+                    			    <div>
+                            			<label>Name </label>
+                            			<input aria-label="Name" id="fieldName" maxlength="200" name="cm-name">
+                        		    </div>
+                        		</div>
+                    			<div>
+                    			    <div>
+                            			<label>Email </label>
+                            			<input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email" id="fieldEmail" maxlength="200" name="cm-gmdyi-gmdyi" required="" type="email">
+                        		    </div>
+                    			</div>
                     			<div>
                     				<div>
                     					<div><input aria-required="" id="cm-privacy-consent" name="cm-privacy-consent" required="" type="checkbox"><label for="cm-privacy-consent">I agree to be emailed</label></div>
