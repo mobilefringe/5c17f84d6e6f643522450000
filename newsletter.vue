@@ -13,8 +13,8 @@
                     <div>
                     	<form class="js-cm-form" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A81D752E65D1343149419CFE6F31FB9FC485EC64DB3B1F2BFCE89F102C7BEDDB2B889805DCB36B9DCB4BE962FC8F40C1A">
                     		<div>
-                    			<div> 
-                    			    <div>
+                    			<div  class="form-group ">
+                                    <div class="col-sm-6 col-xs-12" >
                             			<label>Name </label>
                             			<input aria-label="Name" id="fieldName" maxlength="200" name="cm-name">
                         		    </div>
