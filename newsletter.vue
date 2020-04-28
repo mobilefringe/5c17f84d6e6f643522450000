@@ -25,8 +25,8 @@
                             			<input autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email" id="fieldEmail" maxlength="200" name="cm-gmdyi-gmdyi" required="" type="email">
                         		    </div>
                     			</div>
-                    			<div>
-                    				<div>
+                    			<div class="form-group">
+                                    <div class="col-xs-12">
                     					<div>
                         					<label for="cm-privacy-consent">
                             					<input aria-required="" id="cm-privacy-consent" name="cm-privacy-consent" required="" type="checkbox">
